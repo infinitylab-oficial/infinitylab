@@ -112,7 +112,7 @@ function initConsoleSimulator() {
  */
 function comprarProducto(version) {
     // Representative WhatsApp number for sales (Standard Peru code format)
-    const phoneNumber = "51900000000"; 
+    const phoneNumber = "51991468197"; 
     let message = "";
 
     if (version === "escritorio") {
