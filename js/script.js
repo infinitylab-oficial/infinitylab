@@ -3,107 +3,123 @@
 /* -------------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Generate Starry Night Background
-    generateStars();
-
-    // 2. Setup Console Simulator
+    // 1. Setup Console Simulator
     initConsoleSimulator();
+
+    // 2. Setup FAQ Accordion
+    initFaqAccordion();
+
+    // 3. Setup Floating WhatsApp Button
+    initFloatingWhatsapp();
 });
 
 /**
- * Generates random stars with twinkle animations in the background
+ * Manages the interactive action-range simulation panel
  */
-function generateStars() {
-    const container = document.getElementById("stars-container");
-    if (!container) return;
+function initConsoleSimulator() {
+    const simulatorCard = document.querySelector(".range-simulator-card");
+    const btnToggle = document.getElementById("btn-toggle-sim");
+    const statusTags = document.querySelectorAll(".target-status-tag");
+    const centralNode = document.querySelector(".silence-central-node");
 
-    const starCount = window.innerWidth < 768 ? 60 : 120; // Fewer stars on mobile for performance
+    if (!btnToggle || !simulatorCard) return;
 
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement("div");
-        star.classList.add("star");
+    let simulationActive = false;
 
-        // Random positions
-        const top = Math.random() * 100;
-        const left = Math.random() * 100;
-        
-        // Random size (0.5px to 2.5px)
-        const size = Math.random() * 2 + 0.5;
-        
-        // Random twinkle duration (2s to 6s)
-        const duration = Math.random() * 4 + 2;
+    // Toggle on button click
+    btnToggle.addEventListener("click", toggleSimulation);
 
-        star.style.top = `${top}%`;
-        star.style.left = `${left}%`;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.setProperty("--twinkle-duration", `${duration}s`);
+    // Toggle on central device click
+    if (centralNode) {
+        centralNode.addEventListener("click", toggleSimulation);
+    }
 
-        container.appendChild(star);
+    function toggleSimulation() {
+        simulationActive = !simulationActive;
+
+        if (simulationActive) {
+            simulatorCard.classList.add("sim-active");
+            
+            // Update button
+            btnToggle.innerText = "Apagar Señal de Silencio";
+            btnToggle.classList.remove("btn-off");
+            btnToggle.classList.add("btn-on");
+
+            // Update status tags dynamically
+            statusTags.forEach(tag => {
+                const deviceType = tag.getAttribute("data-device");
+                if (deviceType === "speaker") {
+                    tag.innerText = "SILENCIADO";
+                } else if (deviceType === "gaming") {
+                    tag.innerText = "MANDO PS4/PS5 APAGADO";
+                } else if (deviceType === "wifi") {
+                    tag.innerText = "SIN SEÑAL 2.4G";
+                } else if (deviceType === "tv") {
+                    tag.innerText = "SIN WIFI / PAUSADO";
+                }
+            });
+
+        } else {
+            simulatorCard.classList.remove("sim-active");
+            
+            // Update button
+            btnToggle.innerText = "Encender Dispositivo Silence";
+            btnToggle.classList.remove("btn-on");
+            btnToggle.classList.add("btn-off");
+
+            // Reset status tags
+            statusTags.forEach(tag => {
+                const deviceType = tag.getAttribute("data-device");
+                if (deviceType === "speaker") {
+                    tag.innerText = "REPRODUCIENDO";
+                } else if (deviceType === "gaming") {
+                    tag.innerText = "JUGANDO / PS5";
+                } else if (deviceType === "wifi") {
+                    tag.innerText = "WiFi CONECTADO";
+                } else if (deviceType === "tv") {
+                    tag.innerText = "TRANSMITIENDO HD";
+                }
+            });
+        }
     }
 }
 
+
 /**
- * Manages the interactive PlayStation simulation panel
+ * Setup accordion behavior for FAQs
  */
-function initConsoleSimulator() {
-    const simulatorCard = document.querySelector(".console-simulator");
-    const btnToggle = document.getElementById("btn-toggle-sim");
-    const statusText = document.getElementById("device-status-text");
-    const timerDisplay = document.getElementById("sim-timer");
-
-    if (!btnToggle || !statusText || !timerDisplay || !simulatorCard) return;
-
-    let simulationActive = false;
-    let countdownInterval = null;
-    let secondsLeft = 10;
-
-    btnToggle.addEventListener("click", () => {
-        if (!simulationActive) {
-            // Start blocking simulation
-            simulationActive = true;
-            simulatorCard.classList.add("sim-blocked");
+function initFaqAccordion() {
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        if (!question) return;
+        
+        question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
             
-            // UI Feedback
-            statusText.innerText = "CONEXIÓN DESACTIVADA (APAGANDO WIFI...)";
-            statusText.classList.remove("online");
-            statusText.classList.add("offline");
+            // Close all items first for accordion effect
+            faqItems.forEach(i => i.classList.remove("active"));
             
-            btnToggle.innerText = "RECONECTAR CONSOLA";
-            btnToggle.classList.remove("active");
-
-            // Countdown timer
-            secondsLeft = 10;
-            timerDisplay.innerText = `00 : ${secondsLeft < 10 ? '0' : ''}${secondsLeft}`;
-            
-            countdownInterval = setInterval(() => {
-                secondsLeft--;
-                if (secondsLeft >= 0) {
-                    timerDisplay.innerText = `00 : ${secondsLeft < 10 ? '0' : ''}${secondsLeft}`;
-                } else {
-                    clearInterval(countdownInterval);
-                    timerDisplay.innerText = "SILENCIO ACTIVO";
-                    statusText.innerText = "DISPOSITIVO AISLADO CON ÉXITO";
-                }
-            }, 1000);
-
-        } else {
-            // Cancel simulation / Reconnect console
-            simulationActive = false;
-            if (countdownInterval) clearInterval(countdownInterval);
-            
-            simulatorCard.classList.remove("sim-blocked");
-            
-            statusText.innerText = "CONECTADO / JUGANDO";
-            statusText.classList.remove("offline");
-            statusText.classList.add("online");
-            
-            btnToggle.innerText = "DESACTIVAR WIFI TEMPORALMENTE";
-            btnToggle.classList.add("active");
-            
-            timerDisplay.innerText = "-- : --";
-        }
+            // Toggle the clicked one
+            if (!isActive) {
+                item.classList.add("active");
+            }
+        });
     });
+}
+
+/**
+ * Initializes the floating WhatsApp button link
+ */
+function initFloatingWhatsapp() {
+    const floatBtn = document.getElementById("whatsapp-float-btn");
+    if (!floatBtn) return;
+    
+    const phoneNumber = "51991468197"; // Owner phone number
+    const message = "Hola InfinityLab, tengo una duda sobre el dispositivo Silence. ¿Me podrían ayudar?";
+    const encodedMessage = encodeURIComponent(message);
+    
+    floatBtn.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 }
 
 /**
@@ -111,16 +127,15 @@ function initConsoleSimulator() {
  * @param {string} version - The version of the product ('escritorio' or 'portatil')
  */
 function comprarProducto(version) {
-    // Representative WhatsApp number for sales (Standard Peru code format)
-    const phoneNumber = "51991468197"; 
+    const phoneNumber = "51991468197"; // Owner phone number
     let message = "";
 
     if (version === "escritorio") {
-        message = "Hola InfinityLab, me gustaría solicitar el *InfinityLab Silence - Versión Escritorio* (S/ 99.00). ¿Cómo procedemos con el envío?";
+        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Escritorio* (S/ 99.00). ¿Cuáles son los pasos para realizar el envío?";
     } else if (version === "portatil") {
-        message = "Hola InfinityLab, me gustaría solicitar el *InfinityLab Silence - Versión Portátil con Batería Recargable* (S/ 169.00). ¿Cómo procedemos con el envío?";
+        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Portátil* (S/ 169.00). ¿Cuáles son los pasos para realizar el envío?";
     } else {
-        message = "Hola InfinityLab, me gustaría consultar por el dispositivo InfinityLab Silence.";
+        message = "Hola InfinityLab, me gustaría consultar por el dispositivo Silence.";
     }
 
     // URL encode the message
