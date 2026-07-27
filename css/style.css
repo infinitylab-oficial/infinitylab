@@ -1340,3 +1340,48 @@ h3 {
         gap: 3rem;
     }
 }
+/* ==========================================
+   AJUSTE DE SIMULADOR EN MÓVILES (FIX)
+   ========================================== */
+
+@media (max-width: 575px) {
+  /* Adapta el contenedor del simulador al ancho real del celular */
+  .simulator-map-viewport {
+    max-width: 100% !important;
+    margin: 1rem auto !important;
+  }
+
+  /* Reduce proporcionalmente los íconos de las esquinas */
+  .target-device-node {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .target-device-node svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Reduce proporcionalmente el nodo central (Silence) */
+  .silence-central-node {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .silence-central-node svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* Reubica los nodos hacia las esquinas para dar espacio al centro */
+  .node-top-left { top: 6% !important; left: 5% !important; }
+  .node-top-right { top: 6% !important; right: 5% !important; }
+  .node-bottom-left { bottom: 8% !important; left: 5% !important; }
+  .node-bottom-right { bottom: 8% !important; right: 5% !important; }
+  
+  /* Ajusta la etiqueta de estado de los nodos */
+  .target-device-node .target-status-tag {
+    font-size: 0.45rem !important;
+    bottom: -14px !important;
+  }
+}
