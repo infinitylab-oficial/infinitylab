@@ -1184,3 +1184,42 @@ h3 {
     .hero-subtitle { font-size: 1.1rem; max-width: 600px; }
     .pricing-grid { max-width: 860px; gap: 3rem; }
 }
+/* AJUSTE DE IMAGEN EN EL HERO */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-product-img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+}
+
+/* En pantallas de PC pone el texto a la izquierda y la imagen a la derecha */
+@media (min-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        text-align: left;
+    }
+
+    .hero-subtitle {
+        margin-left: 0;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+}
