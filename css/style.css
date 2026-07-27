@@ -693,9 +693,8 @@ h3 {
     margin-top: 0.75rem;
 }
 
-
 /* -------------------------------------------------------------------------- */
-/* STEPS SECTION (HOW TO BUY) - NEW                                          */
+/* STEPS SECTION (HOW TO BUY) - NEW                                           */
 /* -------------------------------------------------------------------------- */
 .steps-section {
     padding: 3rem 0;
@@ -756,7 +755,7 @@ h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* TECHNICAL FEATURES                                                        */
+/* TECHNICAL FEATURES                                                         */
 /* -------------------------------------------------------------------------- */
 .tech-section {
     padding: 3rem 0;
@@ -933,7 +932,7 @@ h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* TESTIMONIALS (SOCIAL PROOF) - NEW                                         */
+/* TESTIMONIALS (SOCIAL PROOF) - NEW                                          */
 /* -------------------------------------------------------------------------- */
 .testimonials-section {
     padding: 3rem 0;
@@ -1154,7 +1153,7 @@ h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* FLOATING WHATSAPP BUTTON - NEW                                            */
+/* FLOATING WHATSAPP BUTTON - NEW                                             */
 /* -------------------------------------------------------------------------- */
 .floating-whatsapp-container {
     position: fixed;
@@ -1234,6 +1233,44 @@ h3 {
 /* -------------------------------------------------------------------------- */
 /* MEDIA QUERIES (RESPONSIVE)                                                 */
 /* -------------------------------------------------------------------------- */
+
+/* Extra Small Devices (Mobile Fix for Simulator) */
+@media (max-width: 575px) {
+    .simulator-map-viewport {
+        max-width: 100% !important;
+        margin: 1rem auto !important;
+    }
+
+    .target-device-node {
+        width: 58px !important;
+        height: 58px !important;
+    }
+
+    .target-device-node svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .silence-central-node {
+        width: 58px !important;
+        height: 58px !important;
+    }
+
+    .silence-central-node svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .node-top-left { top: 6% !important; left: 5% !important; }
+    .node-top-right { top: 6% !important; right: 5% !important; }
+    .node-bottom-left { bottom: 8% !important; left: 5% !important; }
+    .node-bottom-right { bottom: 8% !important; right: 5% !important; }
+
+    .target-device-node .target-status-tag {
+        font-size: 0.45rem !important;
+        bottom: -14px !important;
+    }
+}
 
 /* Small Tablets / Large Phones */
 @media (min-width: 576px) {
@@ -1339,49 +1376,4 @@ h3 {
         max-width: 860px;
         gap: 3rem;
     }
-}
-/* ==========================================
-   AJUSTE DE SIMULADOR EN MÓVILES (FIX)
-   ========================================== */
-
-@media (max-width: 575px) {
-  /* Adapta el contenedor del simulador al ancho real del celular */
-  .simulator-map-viewport {
-    max-width: 100% !important;
-    margin: 1rem auto !important;
-  }
-
-  /* Reduce proporcionalmente los íconos de las esquinas */
-  .target-device-node {
-    width: 58px !important;
-    height: 58px !important;
-  }
-
-  .target-device-node svg {
-    width: 20px !important;
-    height: 20px !important;
-  }
-
-  /* Reduce proporcionalmente el nodo central (Silence) */
-  .silence-central-node {
-    width: 58px !important;
-    height: 58px !important;
-  }
-
-  .silence-central-node svg {
-    width: 22px !important;
-    height: 22px !important;
-  }
-
-  /* Reubica los nodos hacia las esquinas para dar espacio al centro */
-  .node-top-left { top: 6% !important; left: 5% !important; }
-  .node-top-right { top: 6% !important; right: 5% !important; }
-  .node-bottom-left { bottom: 8% !important; left: 5% !important; }
-  .node-bottom-right { bottom: 8% !important; right: 5% !important; }
-  
-  /* Ajusta la etiqueta de estado de los nodos */
-  .target-device-node .target-status-tag {
-    font-size: 0.45rem !important;
-    bottom: -14px !important;
-  }
 }
