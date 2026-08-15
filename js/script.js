@@ -159,7 +159,7 @@ function comprarProducto(version) {
     let message = "";
 
     if (version === "escritorio") {
-        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Escritorio* (S/ 109.00). ¿Cuáles son los pasos para realizar el envío?";
+        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Escritorio* (S/ 99.00). ¿Cuáles son los pasos para realizar el envío?";
     } else if (version === "portatil") {
         message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Portátil Avanzado* (S/ 169.00). ¿Cuáles son los pasos para realizar el envío?";
     } else if (version === "portatil-pro") {
