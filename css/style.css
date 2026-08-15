@@ -1519,26 +1519,20 @@ h3 {
     }
 }
 
-/* --- FIX PARA EL GLITCH VISUAL EN MÓVILES (MAPA DE COBERTURA) --- */
+/* --- FIX OPTIMIZADO PARA MÓVILES (SIN DESCENTRAR) --- */
 
 .range-simulator-card,
 .silence-central-node,
-.target-device-node,
-.target-device-node *,
-.range-simulator-card div {
-    /* Fuerza al celular a usar la GPU para renderizar sin dejar rastros */
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+.target-device-node {
+    /* Le avisa al celular que use la GPU de forma nativa y sin romper posiciones */
+    will-change: transform;
     
-    /* Evita parpadeos y solapamientos extraños */
+    /* Evita el parpadeo y los rastros visuales (ghosting) */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    
-    /* Suaviza los bordes en las animaciones */
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Opcional: Si el contenedor principal se está desbordando, asegúrate de ocultar lo que sale del borde */
+/* Ocultamos cualquier desbordamiento solo en la tarjeta principal por si acaso */
 .range-simulator-card {
     overflow: hidden; 
 }
