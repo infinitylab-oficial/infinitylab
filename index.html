@@ -81,180 +81,8 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Interactive Simulator Section -->
-        <section id="problema" class="problem-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-tag">Demostración Interactiva</span>
-                    <h2 class="section-title">Elige tu modelo y simula su alcance</h2>
-                    <p class="section-subtitle">
-                        Compara el radio de acción de nuestras tres versiones. Observa qué dispositivos se desactivan de forma segura según el alcance de cada uno.
-                    </p>
-                </div>
-                
-                <div class="problem-grid">
-                    <div class="problem-text-content">
-                        <p class="problem-desc">
-                            <strong>InfinityLab Silence</strong> emite una frecuencia de desasociación focalizada inalámbrica para interrumpir las conexiones de 2.4 GHz y Bluetooth de dispositivos distractores o ruidosos, de forma completamente segura y sin alterar redes de 5 GHz ni telefonía celular.
-                        </p>
-                        <p class="problem-desc">
-                            <strong>Elige el modelo ideal según tu necesidad de silencio:</strong>
-                            <br>• <strong>Versión Escritorio (10m)</strong>: Excelente para control parental (mandos de PlayStation) u oficinas.
-                            <br>• <strong>Versión Portátil (15m)</strong>: Mayor rango, ideal para silenciar vecinos ruidosos en departamentos contiguos.
-                            <br>• <strong>Versión Portátil Pro Avanzado (30m)</strong>: Potencia extrema para exteriores, terrazas, patios y viviendas grandes.
-                        </p>
-                        <p class="problem-desc">
-                            Al apagar el dispositivo o desactivar la simulación, todas las conexiones vuelven a la normalidad de forma inmediata y automática.
-                        </p>
-                        <div class="problem-cta-box">
-                            <a href="#productos" class="btn btn-blue">Ver Precios y Versiones</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Interactive Visual Card: Coverage Map -->
-                    <div class="problem-card">
-                        <div class="range-simulator-card">
-                            <div class="simulator-header">
-                                <div class="sim-dot red"></div>
-                                <div class="sim-dot yellow"></div>
-                                <div class="sim-dot green"></div>
-                                <span class="sim-title">Mapa de Cobertura Activo (Radio 2.4 GHz)</span>
-                            </div>
-                            
-                            <div class="simulator-map-viewport">
-                                <!-- Visual partition for Neighbor vs Home -->
-                                <div class="simulator-partition"></div>
-                                <div class="zone-label zone-neighbor">PROPIEDAD VECINO</div>
-                                <div class="zone-label zone-home">TU HOGAR</div>
 
-                                <!-- Action Range Overlay (Pulsing ripple circle) -->
-                                <div class="action-range-overlay"></div>
-                                
-                                <!-- Central Node: Silence Device -->
-                                <div class="silence-central-node">
-                                    <div class="device-led-indicator"></div>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                                        <rect x="6" y="10" width="12" height="12" rx="2" ry="2"/>
-                                        <line x1="12" y1="6" x2="12.01" y2="6"/>
-                                    </svg>
-                                    <span class="node-label">Silence</span>
-                                </div>
-                                
-                                <!-- Target 1: Mando Consola (Near - 8m) -->
-                                <div class="target-device-node node-mando">
-                                    <div class="offline-cross"></div>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
-                                        <path d="M6 12h4M8 10v4"/>
-                                        <circle cx="15" cy="11" r="1"/>
-                                        <circle cx="17" cy="13" r="1"/>
-                                    </svg>
-                                    <span class="target-name">Mando PS4/5 (8m)</span>
-                                    <span class="target-status-tag" data-device="gaming">JUGANDO / PS5</span>
-                                </div>
-                                
-                                <!-- Target 2: Bocina Vecino 1 (Medium - 13m) -->
-                                <div class="target-device-node node-bocina1">
-                                    <div class="music-waves" id="waves-bocina1">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="offline-cross"></div>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                                    </svg>
-                                    <span class="target-name">Bocina Vecino (13m)</span>
-                                    <span class="target-status-tag" data-device="speaker1">REPRODUCIENDO</span>
-                                </div>
-                                
-                                <!-- Target 3: Bocina Vecino 2 (Far - 25m) -->
-                                <div class="target-device-node node-bocina2">
-                                    <div class="music-waves" id="waves-bocina2">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="offline-cross"></div>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                                    </svg>
-                                    <span class="target-name">Bocina Terraza (25m)</span>
-                                    <span class="target-status-tag" data-device="speaker2">REPRODUCIENDO</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Control Panel: Model Selector -->
-                            <div class="sim-controls-pane">
-                                <h4 class="selector-title">Elige un modelo para probar alcance:</h4>
-                                <div class="model-selector-group">
-                                    <button class="btn-model-select active" data-model="off">
-                                        <span class="indicator red"></span> Apagado
-                                    </button>
-                                    <button class="btn-model-select" data-model="escritorio">
-                                        <span class="indicator"></span> Escritorio (10m)
-                                    </button>
-                                    <button class="btn-model-select" data-model="portatil">
-                                        <span class="indicator"></span> Portátil (15m)
-                                    </button>
-                                    <button class="btn-model-select" data-model="portatil-pro">
-                                        <span class="indicator"></span> Portátil Pro (30m)
-                                    </button>
-                                </div>
-                                <p class="sim-footer-note">Haz clic en cada modelo para observar la propagación de la señal y qué dispositivos se bloquean según el alcance.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Technical Specs Section -->
-        <section id="tecnologia" class="tech-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-tag">Ingeniería Avanzada</span>
-                    <h2 class="section-title">Desarrollado con microcontroladores</h2>
-                    <p class="section-subtitle">Tecnología diseñada para operar con total eficiencia, estabilidad y facilidad.</p>
-                </div>
-                
-                <div class="tech-grid">
-                    <!-- Tech Feature 1 -->
-                    <div class="glass-card tech-card">
-                        <div class="tech-icon-container">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.5 16.55a6.5 6.5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
-                        </div>
-                        <h3>Interrupción Inalámbrica</h3>
-                        <p>Envía micro-paquetes a los canales 2.4GHz de WiFi y Bluetooth, interrumpiendo mando de consolas y parlantes modernos sin alterar la red general si se apunta correctamente* (Usando antena focalizada).</p>
-                    </div>
-
-                    <!-- Tech Feature 2 -->
-                    <div class="glass-card tech-card">
-                        <div class="tech-icon-container">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m12 8-4 4h8z"/></svg>
-                        </div>
-                        <h3>Alcance Efectivo</h3>
-                        <p>Cubre un rango de 10 a 13 metros con línea de vista, ideal para controlar dispositivos que estén en habitaciones contiguas o departamentos vecinos.</p>
-                    </div>
-
-                    <!-- Tech Feature 3 -->
-                    <div class="glass-card tech-card">
-                        <div class="tech-icon-container">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
-                        </div>
-                        <h3>Listo Para Usar</h3>
-                        <p>No requiere instalaciones complejas ni programas complicados. Solo enciende o conecta el dispositivo a un cargador USB y comenzará a operar al instante.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products and Pricing Section -->
+                <!-- Products and Pricing Section -->
         <section id="productos" class="pricing-section">
             <div class="container">
                 <div class="section-header text-center">
@@ -546,6 +374,179 @@
             </div>
         </section>
 
+        
+        <!-- Interactive Simulator Section -->
+        <section id="problema" class="problem-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Demostración Interactiva</span>
+                    <h2 class="section-title">Elige tu modelo y simula su alcance</h2>
+                    <p class="section-subtitle">
+                        Compara el radio de acción de nuestras tres versiones. Observa qué dispositivos se desactivan de forma segura según el alcance de cada uno.
+                    </p>
+                </div>
+                
+                <div class="problem-grid">
+                    <div class="problem-text-content">
+                        <p class="problem-desc">
+                            <strong>InfinityLab Silence</strong> emite una frecuencia de desasociación focalizada inalámbrica para interrumpir las conexiones de 2.4 GHz y Bluetooth de dispositivos distractores o ruidosos, de forma completamente segura y sin alterar redes de 5 GHz ni telefonía celular.
+                        </p>
+                        <p class="problem-desc">
+                            <strong>Elige el modelo ideal según tu necesidad de silencio:</strong>
+                            <br>• <strong>Versión Escritorio (10m)</strong>: Excelente para control parental (mandos de PlayStation) u oficinas.
+                            <br>• <strong>Versión Portátil (15m)</strong>: Mayor rango, ideal para silenciar vecinos ruidosos en departamentos contiguos.
+                            <br>• <strong>Versión Portátil Pro Avanzado (30m)</strong>: Potencia extrema para exteriores, terrazas, patios y viviendas grandes.
+                        </p>
+                        <p class="problem-desc">
+                            Al apagar el dispositivo o desactivar la simulación, todas las conexiones vuelven a la normalidad de forma inmediata y automática.
+                        </p>
+                        <div class="problem-cta-box">
+                            <a href="#productos" class="btn btn-blue">Ver Precios y Versiones</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Visual Card: Coverage Map -->
+                    <div class="problem-card">
+                        <div class="range-simulator-card">
+                            <div class="simulator-header">
+                                <div class="sim-dot red"></div>
+                                <div class="sim-dot yellow"></div>
+                                <div class="sim-dot green"></div>
+                                <span class="sim-title">Mapa de Cobertura Activo (Radio 2.4 GHz)</span>
+                            </div>
+                            
+                            <div class="simulator-map-viewport">
+                                <!-- Visual partition for Neighbor vs Home -->
+                                <div class="simulator-partition"></div>
+                                <div class="zone-label zone-neighbor">PROPIEDAD VECINO</div>
+                                <div class="zone-label zone-home">TU HOGAR</div>
+
+                                <!-- Action Range Overlay (Pulsing ripple circle) -->
+                                <div class="action-range-overlay"></div>
+                                
+                                <!-- Central Node: Silence Device -->
+                                <div class="silence-central-node">
+                                    <div class="device-led-indicator"></div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                        <rect x="6" y="10" width="12" height="12" rx="2" ry="2"/>
+                                        <line x1="12" y1="6" x2="12.01" y2="6"/>
+                                    </svg>
+                                    <span class="node-label">Silence</span>
+                                </div>
+                                
+                                <!-- Target 1: Mando Consola (Near - 8m) -->
+                                <div class="target-device-node node-mando">
+                                    <div class="offline-cross"></div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
+                                        <path d="M6 12h4M8 10v4"/>
+                                        <circle cx="15" cy="11" r="1"/>
+                                        <circle cx="17" cy="13" r="1"/>
+                                    </svg>
+                                    <span class="target-name">Mando PS4/5 (8m)</span>
+                                    <span class="target-status-tag" data-device="gaming">JUGANDO / PS5</span>
+                                </div>
+                                
+                                <!-- Target 2: Bocina Vecino 1 (Medium - 13m) -->
+                                <div class="target-device-node node-bocina1">
+                                    <div class="music-waves" id="waves-bocina1">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="offline-cross"></div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                                    </svg>
+                                    <span class="target-name">Bocina Vecino (13m)</span>
+                                    <span class="target-status-tag" data-device="speaker1">REPRODUCIENDO</span>
+                                </div>
+                                
+                                <!-- Target 3: Bocina Vecino 2 (Far - 25m) -->
+                                <div class="target-device-node node-bocina2">
+                                    <div class="music-waves" id="waves-bocina2">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="offline-cross"></div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                                    </svg>
+                                    <span class="target-name">Bocina Terraza (25m)</span>
+                                    <span class="target-status-tag" data-device="speaker2">REPRODUCIENDO</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Control Panel: Model Selector -->
+                            <div class="sim-controls-pane">
+                                <h4 class="selector-title">Elige un modelo para probar alcance:</h4>
+                                <div class="model-selector-group">
+                                    <button class="btn-model-select active" data-model="off">
+                                        <span class="indicator red"></span> Apagado
+                                    </button>
+                                    <button class="btn-model-select" data-model="escritorio">
+                                        <span class="indicator"></span> Escritorio (10m)
+                                    </button>
+                                    <button class="btn-model-select" data-model="portatil">
+                                        <span class="indicator"></span> Portátil (15m)
+                                    </button>
+                                    <button class="btn-model-select" data-model="portatil-pro">
+                                        <span class="indicator"></span> Portátil Pro (30m)
+                                    </button>
+                                </div>
+                                <p class="sim-footer-note">Haz clic en cada modelo para observar la propagación de la señal y qué dispositivos se bloquean según el alcance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Technical Specs Section -->
+        <section id="tecnologia" class="tech-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Ingeniería Avanzada</span>
+                    <h2 class="section-title">Desarrollado con microcontroladores</h2>
+                    <p class="section-subtitle">Tecnología diseñada para operar con total eficiencia, estabilidad y facilidad.</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <!-- Tech Feature 1 -->
+                    <div class="glass-card tech-card">
+                        <div class="tech-icon-container">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.5 16.55a6.5 6.5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
+                        </div>
+                        <h3>Interrupción Inalámbrica</h3>
+                        <p>Envía micro-paquetes a los canales 2.4GHz de WiFi y Bluetooth, interrumpiendo mando de consolas y parlantes modernos sin alterar la red general si se apunta correctamente* (Usando antena focalizada).</p>
+                    </div>
+
+                    <!-- Tech Feature 2 -->
+                    <div class="glass-card tech-card">
+                        <div class="tech-icon-container">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m12 8-4 4h8z"/></svg>
+                        </div>
+                        <h3>Alcance Efectivo</h3>
+                        <p>Cubre un rango de 10 a 13 metros con línea de vista, ideal para controlar dispositivos que estén en habitaciones contiguas o departamentos vecinos.</p>
+                    </div>
+
+                    <!-- Tech Feature 3 -->
+                    <div class="glass-card tech-card">
+                        <div class="tech-icon-container">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+                        </div>
+                        <h3>Listo Para Usar</h3>
+                        <p>No requiere instalaciones complejas ni programas complicados. Solo enciende o conecta el dispositivo a un cargador USB y comenzará a operar al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
         <section id="faq" class="faq-section">
             <div class="container">
@@ -666,7 +667,7 @@
     <!-- Floating WhatsApp Button - Essential for Peruvian conversions -->
     <div class="floating-whatsapp-container">
         <div class="whatsapp-tooltip">
-            <p>¿Tienes dudas? ¡Pregúntanos por WhatsApp!</p>
+            <p>Asesor</p>
         </div>
         <a id="whatsapp-float-btn" class="floating-whatsapp-btn" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.49 1.966 14.039.935 11.39.935c-5.442 0-9.867 4.372-9.87 9.8.002 1.778.483 3.51 1.396 5.042L1.87 20.25l4.777-1.096zM17.8 14.18c-.31-.156-1.84-.908-2.12-.99-.28-.104-.49-.156-.69.156-.2.312-.78.99-.95 1.198-.17.208-.35.234-.66.078-.31-.156-1.3-.48-2.48-1.527-.91-.812-1.53-1.82-1.71-2.13-.18-.31-.02-.48.13-.635.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.208.05-.39-.02-.546-.08-.156-.69-1.664-.95-2.288-.25-.6-.53-.52-.73-.53-.19-.01-.4-.01-.61-.01-.21 0-.55.078-.84.39-.29.312-1.11 1.092-1.11 2.666 0 1.573 1.15 3.094 1.31 3.3.16.208 2.26 3.452 5.48 4.84.77.33 1.37.528 1.84.678.77.24 1.48.207 2.04.124.62-.093 1.84-.754 2.1-1.447.26-.692.26-1.288.18-1.417-.08-.124-.29-.208-.6-.364z"/></svg>
