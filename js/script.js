@@ -14,70 +14,98 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Manages the interactive action-range simulation panel
+ * Manages the interactive action-range simulation panel with 3 models
  */
 function initConsoleSimulator() {
     const simulatorCard = document.querySelector(".range-simulator-card");
-    const btnToggle = document.getElementById("btn-toggle-sim");
+    const modelButtons = document.querySelectorAll(".btn-model-select");
     const statusTags = document.querySelectorAll(".target-status-tag");
     const centralNode = document.querySelector(".silence-central-node");
 
-    if (!btnToggle || !simulatorCard) return;
+    if (!simulatorCard || modelButtons.length === 0) return;
 
-    let simulationActive = false;
+    modelButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Remove active class from all buttons
+            modelButtons.forEach(b => b.classList.remove("active"));
+            // Add active class to clicked button
+            btn.classList.add("active");
 
-    // Toggle on button click
-    btnToggle.addEventListener("click", toggleSimulation);
+            const model = btn.getAttribute("data-model");
+            updateSimulatorState(model);
+        });
+    });
 
-    // Toggle on central device click
+    // Toggle between off and max when clicking the central node
     if (centralNode) {
-        centralNode.addEventListener("click", toggleSimulation);
+        centralNode.addEventListener("click", () => {
+            const activeBtn = document.querySelector(".btn-model-select.active");
+            const currentModel = activeBtn ? activeBtn.getAttribute("data-model") : "off";
+            
+            let nextModel = "off";
+            if (currentModel === "off") {
+                nextModel = "portatil-pro"; // Go straight to max power
+            } else {
+                nextModel = "off";
+            }
+
+            // Click the corresponding button to trigger the update
+            const targetBtn = Array.from(modelButtons).find(b => b.getAttribute("data-model") === nextModel);
+            if (targetBtn) {
+                targetBtn.click();
+            }
+        });
     }
 
-    function toggleSimulation() {
-        simulationActive = !simulationActive;
-
-        if (simulationActive) {
-            simulatorCard.classList.add("sim-active");
-            
-            // Update button
-            btnToggle.innerText = "Apagar Señal de Silencio";
-            btnToggle.classList.remove("btn-off");
-            btnToggle.classList.add("btn-on");
-
-            // Update status tags dynamically
+    function updateSimulatorState(model) {
+        // Reset classes
+        simulatorCard.classList.remove("sim-active", "sim-escritorio", "sim-portatil", "sim-portatil-pro");
+        
+        if (model === "off") {
+            // Reset status tags and classes of targets
             statusTags.forEach(tag => {
                 const deviceType = tag.getAttribute("data-device");
-                if (deviceType === "speaker") {
-                    tag.innerText = "SILENCIADO";
-                } else if (deviceType === "gaming") {
-                    tag.innerText = "MANDO PS4/PS5 APAGADO";
-                } else if (deviceType === "wifi") {
-                    tag.innerText = "SIN SEÑAL 2.4G";
-                } else if (deviceType === "tv") {
-                    tag.innerText = "SIN WIFI / PAUSADO";
+                const parent = tag.closest(".target-device-node");
+                if (parent) parent.classList.remove("blocked");
+
+                if (deviceType === "gaming") {
+                    tag.innerText = "JUGANDO / PS5";
+                } else if (deviceType === "speaker1") {
+                    tag.innerText = "REPRODUCIENDO";
+                } else if (deviceType === "speaker2") {
+                    tag.innerText = "REPRODUCIENDO";
                 }
             });
-
         } else {
-            simulatorCard.classList.remove("sim-active");
-            
-            // Update button
-            btnToggle.innerText = "Encender Dispositivo Silence";
-            btnToggle.classList.remove("btn-on");
-            btnToggle.classList.add("btn-off");
+            simulatorCard.classList.add("sim-active");
+            simulatorCard.classList.add(`sim-${model}`);
 
-            // Reset status tags
             statusTags.forEach(tag => {
                 const deviceType = tag.getAttribute("data-device");
-                if (deviceType === "speaker") {
-                    tag.innerText = "REPRODUCIENDO";
-                } else if (deviceType === "gaming") {
-                    tag.innerText = "JUGANDO / PS5";
-                } else if (deviceType === "wifi") {
-                    tag.innerText = "WiFi CONECTADO";
-                } else if (deviceType === "tv") {
-                    tag.innerText = "TRANSMITIENDO HD";
+                const parent = tag.closest(".target-device-node");
+                
+                let isBlocked = false;
+
+                if (deviceType === "gaming") {
+                    // Blocked by all models (10m, 15m, 30m) since it's 8m away
+                    isBlocked = true;
+                    tag.innerText = "MANDO APAGADO (8m)";
+                } else if (deviceType === "speaker1") {
+                    // Blocked by portatil (15m) and portatil-pro (30m) since it's 13m away
+                    isBlocked = (model === "portatil" || model === "portatil-pro");
+                    tag.innerText = isBlocked ? "SILENCIADO (13m)" : "REPRODUCIENDO";
+                } else if (deviceType === "speaker2") {
+                    // Blocked only by portatil-pro (30m) since it's 25m away
+                    isBlocked = (model === "portatil-pro");
+                    tag.innerText = isBlocked ? "SILENCIADO (25m)" : "REPRODUCIENDO";
+                }
+
+                if (parent) {
+                    if (isBlocked) {
+                        parent.classList.add("blocked");
+                    } else {
+                        parent.classList.remove("blocked");
+                    }
                 }
             });
         }
@@ -124,16 +152,18 @@ function initFloatingWhatsapp() {
 
 /**
  * Handles product orders by redirecting the user to WhatsApp with pre-filled, customized messages
- * @param {string} version - The version of the product ('escritorio' or 'portatil')
+ * @param {string} version - The version of the product ('escritorio', 'portatil', or 'portatil-pro')
  */
 function comprarProducto(version) {
     const phoneNumber = "51991468197"; // Owner phone number
     let message = "";
 
     if (version === "escritorio") {
-        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Escritorio* (S/ 99.00). ¿Cuáles son los pasos para realizar el envío?";
+        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Escritorio* (S/ 109.00). ¿Cuáles son los pasos para realizar el envío?";
     } else if (version === "portatil") {
-        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Portátil* (S/ 169.00). ¿Cuáles son los pasos para realizar el envío?";
+        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Portátil Avanzado* (S/ 169.00). ¿Cuáles son los pasos para realizar el envío?";
+    } else if (version === "portatil-pro") {
+        message = "Hola InfinityLab, me interesa adquirir el *Silence - Versión Portátil Pro Avanzado* (S/ 289.00). ¿Cuáles son los pasos para realizar el envío?";
     } else {
         message = "Hola InfinityLab, me gustaría consultar por el dispositivo Silence.";
     }
@@ -145,3 +175,4 @@ function comprarProducto(version) {
     // Open WhatsApp in a new tab/app window
     window.open(whatsappUrl, "_blank");
 }
+

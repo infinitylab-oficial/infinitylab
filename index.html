@@ -34,14 +34,14 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="container">
-           <span class="hero-tag">Tecnología de Silencio</span>
+                <span class="hero-tag">Tecnología de Silencio</span>
                 <h1 class="hero-title">¿Música a alto volumen a medianoche? ¿Hijos distraídos por los videojuegos?</h1>
                 <p class="hero-subtitle">
                     Recupera el descanso y la paz en tu hogar hoy mismo. Con nuestro dispositivo Silence, interrumpe temporalmente las señales inalámbricas (WiFi/Bluetooth) de parlantes o consolas con solo un botón.
                 </p>
                 <div class="hero-buttons">
                     <a href="#productos" class="btn btn-emerald">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><polygon points="16 8 20 8 23 11 23 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                         Ver Modelos y Precios
                     </a>
                     <a href="#problema" class="btn btn-outline">
@@ -87,25 +87,25 @@
             <div class="container">
                 <div class="section-header text-center">
                     <span class="section-tag">Demostración Interactiva</span>
-                    <h2 class="section-title">¿Cómo funciona el rango de acción de Silence?</h2>
+                    <h2 class="section-title">Elige tu modelo y simula su alcance</h2>
                     <p class="section-subtitle">
-                        Presiona el botón de encendido y observa cómo el dispositivo actúa sobre el WiFi y Bluetooth en la banda de 2.4 GHz dentro de su rango de cobertura.
+                        Compara el radio de acción de nuestras tres versiones. Observa qué dispositivos se desactivan de forma segura según el alcance de cada uno.
                     </p>
                 </div>
                 
                 <div class="problem-grid">
                     <div class="problem-text-content">
                         <p class="problem-desc">
-                            <strong>InfinityLab Silence</strong> emite una frecuencia de desasociación que interrumpe la comunicación entre el emisor (router, celular) y los dispositivos que usan tecnología inalámbrica de 2.4 GHz y Bluetooth en un radio de 10 metros con línea de vista.
+                            <strong>InfinityLab Silence</strong> emite una frecuencia de desasociación focalizada inalámbrica para interrumpir las conexiones de 2.4 GHz y Bluetooth de dispositivos distractores o ruidosos, de forma completamente segura y sin alterar redes de 5 GHz ni telefonía celular.
                         </p>
                         <p class="problem-desc">
-                            <strong>Dispositivos afectados en su rango de acción:</strong>
-                            <br>• <strong>Bocinas y Parlantes Bluetooth</strong> de vecinos ruidosos (se silencian al activar el dispositivo).
-                            <br>• <strong>Mandos inalámbricos de PlayStation (PS4/PS5)</strong> y Xbox (No se comunica con la consola de videojuegos).
-                            
+                            <strong>Elige el modelo ideal según tu necesidad de silencio:</strong>
+                            <br>• <strong>Versión Escritorio (10m)</strong>: Excelente para control parental (mandos de PlayStation) u oficinas.
+                            <br>• <strong>Versión Portátil (15m)</strong>: Mayor rango, ideal para silenciar vecinos ruidosos en departamentos contiguos.
+                            <br>• <strong>Versión Portátil Pro Avanzado (30m)</strong>: Potencia extrema para exteriores, terrazas, patios y viviendas grandes.
                         </p>
                         <p class="problem-desc">
-                            Todo esto ocurre <strong>sin cortar la electricidad, sin cables desconectados y sin alterar otras bandas</strong> (como redes celulares o WiFi de 5 GHz). Al apagar el equipo Silence, todo vuelve a conectarse con total normalidad.
+                            Al apagar el dispositivo o desactivar la simulación, todas las conexiones vuelven a la normalidad de forma inmediata y automática.
                         </p>
                         <div class="problem-cta-box">
                             <a href="#productos" class="btn btn-blue">Ver Precios y Versiones</a>
@@ -119,15 +119,20 @@
                                 <div class="sim-dot red"></div>
                                 <div class="sim-dot yellow"></div>
                                 <div class="sim-dot green"></div>
-                                <span class="sim-title">Simulador de Cobertura (Radio 2.4 GHz)</span>
+                                <span class="sim-title">Mapa de Cobertura Activo (Radio 2.4 GHz)</span>
                             </div>
                             
                             <div class="simulator-map-viewport">
+                                <!-- Visual partition for Neighbor vs Home -->
+                                <div class="simulator-partition"></div>
+                                <div class="zone-label zone-neighbor">PROPIEDAD VECINO</div>
+                                <div class="zone-label zone-home">TU HOGAR</div>
+
                                 <!-- Action Range Overlay (Pulsing ripple circle) -->
                                 <div class="action-range-overlay"></div>
                                 
                                 <!-- Central Node: Silence Device -->
-                                <div class="silence-central-node" title="Haga clic aquí para encender/apagar">
+                                <div class="silence-central-node">
                                     <div class="device-led-indicator"></div>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
@@ -137,9 +142,22 @@
                                     <span class="node-label">Silence</span>
                                 </div>
                                 
-                                <!-- Target 1: Speaker (Top-Left) -->
-                                <div class="target-device-node node-top-left">
-                                    <div class="music-waves">
+                                <!-- Target 1: Mando Consola (Near - 8m) -->
+                                <div class="target-device-node node-mando">
+                                    <div class="offline-cross"></div>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
+                                        <path d="M6 12h4M8 10v4"/>
+                                        <circle cx="15" cy="11" r="1"/>
+                                        <circle cx="17" cy="13" r="1"/>
+                                    </svg>
+                                    <span class="target-name">Mando PS4/5 (8m)</span>
+                                    <span class="target-status-tag" data-device="gaming">JUGANDO / PS5</span>
+                                </div>
+                                
+                                <!-- Target 2: Bocina Vecino 1 (Medium - 13m) -->
+                                <div class="target-device-node node-bocina1">
+                                    <div class="music-waves" id="waves-bocina1">
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -149,53 +167,45 @@
                                         <path d="M11 5L6 9H2v6h4l5 4V5z"/>
                                         <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
                                     </svg>
-                                    <span class="target-name">Bocina Vecino</span>
-                                    <span class="target-status-tag" data-device="speaker">REPRODUCIENDO</span>
+                                    <span class="target-name">Bocina Vecino (13m)</span>
+                                    <span class="target-status-tag" data-device="speaker1">REPRODUCIENDO</span>
                                 </div>
                                 
-                                <!-- Target 2: Controller (Top-Right) -->
-                                <div class="target-device-node node-top-right">
+                                <!-- Target 3: Bocina Vecino 2 (Far - 25m) -->
+                                <div class="target-device-node node-bocina2">
+                                    <div class="music-waves" id="waves-bocina2">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
                                     <div class="offline-cross"></div>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/>
-                                        <path d="M6 12h4M8 10v4"/>
-                                        <circle cx="15" cy="11" r="1"/>
-                                        <circle cx="17" cy="13" r="1"/>
+                                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
                                     </svg>
-                                    <span class="target-name">Mando PS4/5</span>
-                                    <span class="target-status-tag" data-device="gaming">JUGANDO / PS5</span>
-                                </div>
-                                
-                                <!-- Target 3: Smart TV (Bottom-Left) -->
-                                <div class="target-device-node node-bottom-left">
-                                    <div class="offline-cross"></div>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
-                                        <polyline points="17 2 12 7 7 2"/>
-                                    </svg>
-                                    <span class="target-name">Smart TV</span>
-                                    <span class="target-status-tag" data-device="tv">TRANSMITIENDO HD</span>
-                                </div>
-                                
-                                <!-- Target 4: Laptop WiFi (Bottom-Right) -->
-                                <div class="target-device-node node-bottom-right">
-                                    <div class="offline-cross"></div>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                        <line x1="2" y1="20" x2="22" y2="20"/>
-                                        <line x1="12" y1="17" x2="12" y2="20"/>
-                                    </svg>
-                                    <span class="target-name">WiFi Laptop</span>
-                                    <span class="target-status-tag" data-device="wifi">WiFi CONECTADO</span>
+                                    <span class="target-name">Bocina Terraza (25m)</span>
+                                    <span class="target-status-tag" data-device="speaker2">REPRODUCIENDO</span>
                                 </div>
                             </div>
                             
-                            <!-- Control Panel -->
+                            <!-- Control Panel: Model Selector -->
                             <div class="sim-controls-pane">
-                                <button id="btn-toggle-sim" class="btn-power-sim btn-off">
-                                    Encender Dispositivo Silence
-                                </button>
-                                <p class="sim-footer-note">Haz clic en el botón o directamente sobre el Silence central para encender/apagar.</p>
+                                <h4 class="selector-title">Elige un modelo para probar alcance:</h4>
+                                <div class="model-selector-group">
+                                    <button class="btn-model-select active" data-model="off">
+                                        <span class="indicator red"></span> Apagado
+                                    </button>
+                                    <button class="btn-model-select" data-model="escritorio">
+                                        <span class="indicator"></span> Escritorio (10m)
+                                    </button>
+                                    <button class="btn-model-select" data-model="portatil">
+                                        <span class="indicator"></span> Portátil (15m)
+                                    </button>
+                                    <button class="btn-model-select" data-model="portatil-pro">
+                                        <span class="indicator"></span> Portátil Pro (30m)
+                                    </button>
+                                </div>
+                                <p class="sim-footer-note">Haz clic en cada modelo para observar la propagación de la señal y qué dispositivos se bloquean según el alcance.</p>
                             </div>
                         </div>
                     </div>
@@ -246,6 +256,46 @@
             </div>
         </section>
 
+        <!-- Technical Specs Section -->
+        <section id="tecnologia" class="tech-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Ingeniería Avanzada</span>
+                    <h2 class="section-title">Desarrollado con microcontroladores</h2>
+                    <p class="section-subtitle">Tecnología diseñada para operar con total eficiencia, estabilidad y facilidad.</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <!-- Tech Feature 1 -->
+                    <div class="glass-card tech-card">
+                        <div class="tech-icon-container">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.5 16.55a6.5 6.5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
+                        </div>
+                        <h3>Interrupción Inalámbrica</h3>
+                        <p>Envía micro-paquetes a los canales 2.4GHz de WiFi y Bluetooth, interrumpiendo mando de consolas y parlantes modernos sin alterar la red general si se apunta correctamente* (Usando antena focalizada).</p>
+                    </div>
+
+                    <!-- Tech Feature 2 -->
+                    <div class="glass-card tech-card">
+                        <div class="tech-icon-container">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m12 8-4 4h8z"/></svg>
+                        </div>
+                        <h3>Alcance Efectivo</h3>
+                        <p>Cubre un rango de 10 a 13 metros con línea de vista, ideal para controlar dispositivos que estén en habitaciones contiguas o departamentos vecinos.</p>
+                    </div>
+
+                    <!-- Tech Feature 3 -->
+                    <div class="glass-card tech-card">
+                        <div class="tech-icon-container">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+                        </div>
+                        <h3>Listo Para Usar</h3>
+                        <p>No requiere instalaciones complejas ni programas complicados. Solo enciende o conecta el dispositivo a un cargador USB y comenzará a operar al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Products and Pricing Section -->
         <section id="productos" class="pricing-section">
             <div class="container">
@@ -259,12 +309,12 @@
                     <!-- Product 1: Desktop -->
                     <div class="glass-card product-card">
                         <div class="product-image-container">
-                            <img src="assets/escritorio.jpg" alt="InfinityLab Silence Versión de Escritorio" class="product-image" loading="lazy">
-                            <span class="product-badge badge-green">Conexión USB</span>
+                            <img src="assets/escritorio.jpg" alt="InfinityLab Silence Versión Escritorio" class="product-image" loading="lazy">
+                            <span class="product-badge badge-green">Alcance: 10m</span>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Silence - Versión Escritorio</h3>
-                            <p class="product-desc">Ideal para casa u oficina. Se conecta de forma continua mediante cable USB a cualquier cargador de celular. Alcance continuo garantizado para toda la noche.</p>
+                            <h3 class="product-name">Versión Escritorio</h3>
+                            <p class="product-desc">Ideal para casa u oficina. Se conecta de forma continua mediante cable USB a cualquier cargador de celular o puerto USB. Rango de cobertura de hasta 10 metros en línea de vista.</p>
                             <div class="product-price-box">
                                 <span class="price-currency">S/</span>
                                 <span class="price-value">109.00</span>
@@ -276,16 +326,16 @@
                             </button>
                         </div>
                     </div>
-
+ 
                     <!-- Product 2: Portable -->
                     <div class="glass-card product-card highlighted">
                         <div class="product-image-container">
                             <img src="assets/portatil.jpg" alt="InfinityLab Silence Versión Portátil" class="product-image" loading="lazy">
-                            <span class="product-badge badge-blue">Recomendado</span>
+                            <span class="product-badge badge-blue">Alcance: 15m</span>
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Silence - Versión Portátil</h3>
-                            <p class="product-desc">Llévalo a donde quieras. Incluye batería de Litio integrada recargable. Perfecto para viajes, diferentes rincones de la casa u oficinas. Apagado inmediato con un interruptor físico.</p>
+                            <h3 class="product-name">Versión Portátil Avanzado</h3>
+                            <p class="product-desc">Llévalo a donde quieras. Incluye batería de Litio integrada recargable. Perfecto para viajes y diferentes habitaciones. Cobertura efectiva de hasta 15 metros.</p>
                             <div class="product-price-box">
                                 <span class="price-currency">S/</span>
                                 <span class="price-value">169.00</span>
@@ -297,6 +347,27 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Product 3: Portable Pro Advanced -->
+                    <div class="glass-card product-card">
+                        <div class="product-image-container">
+                            <img src="assets/Portatil_pro.PNG" alt="InfinityLab Silence Versión Portátil Pro Avanzado" class="product-image" loading="lazy">
+                            <span class="product-badge badge-green">Alcance: 30m</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Versión Portátil Pro Avanzado</h3>
+                            <p class="product-desc">Máxima potencia de transmisión. Antena amplificada para atravesar paredes gruesas y obstáculos. Batería premium de alta capacidad. Cobertura extendida de hasta 30 metros.</p>
+                            <div class="product-price-box">
+                                <span class="price-currency">S/</span>
+                                <span class="price-value">289.00</span>
+                                <span class="price-suffix">Soles</span>
+                            </div>
+                            <button onclick="comprarProducto('portatil-pro')" class="btn btn-whatsapp w-full">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.49 1.966 14.039.935 11.39.935c-5.442 0-9.867 4.372-9.87 9.8.002 1.778.483 3.51 1.396 5.042L1.87 20.25l4.777-1.096zM17.8 14.18c-.31-.156-1.84-.908-2.12-.99-.28-.104-.49-.156-.69.156-.2.312-.78.99-.95 1.198-.17.208-.35.234-.66.078-.31-.156-1.3-.48-2.48-1.527-.91-.812-1.53-1.82-1.71-2.13-.18-.31-.02-.48.13-.635.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.208.05-.39-.02-.546-.08-.156-.69-1.664-.95-2.288-.25-.6-.53-.52-.73-.53-.19-.01-.4-.01-.61-.01-.21 0-.55.078-.84.39-.29.312-1.11 1.092-1.11 2.666 0 1.573 1.15 3.094 1.31 3.3.16.208 2.26 3.452 5.48 4.84.77.33 1.37.528 1.84.678.77.24 1.48.207 2.04.124.62-.093 1.84-.754 2.1-1.447.26-.692.26-1.288.18-1.417-.08-.124-.29-.208-.6-.364z"/></svg>
+                                Pedir Versión Portátil Pro Avanzado
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -305,16 +376,28 @@
         <section id="testimonios" class="testimonials-section">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="section-tag">Testimonios</span>
-                    <h2 class="section-title">¿Qué opinan nuestros compradores?</h2>
-                    <p class="section-subtitle">Descubre cómo otras personas han recuperado la paz en su hogar gracias a InfinityLab Silence.</p>
+                    <span class="section-tag">⭐ +200 Clientes satisfechos</span>
+                    <h2 class="section-title">Lo que dicen nuestros compradores</h2>
+                    <p class="section-subtitle">Reseñas verificadas de personas reales en todo el Perú.</p>
                 </div>
-                
-                <div class="testimonials-grid">
+
+                <!-- Overall rating summary -->
+                <div class="rating-summary">
+                    <span class="rating-big">4.9</span>
+                    <div class="rating-stars-row">
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <span class="rating-count">Basado en +200 reseñas</span>
+                </div>
+
+                <div class="testimonials-scroll-track">
                     <!-- Testimonial 1 -->
                     <div class="glass-card testimonial-card">
                         <div class="testimonial-stars">
-                            <!-- 5 Stars SVG -->
                             <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                             <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -325,10 +408,10 @@
                             "Tenía un vecino que ponía música con parlante bluetooth todos los domingos en la madrugada. Con el Silence Escritorio lo apago en segundos sin salir de mi cama. ¡Por fin puedo dormir!"
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">CR</div>
+                            <div class="author-avatar" style="background:#2563EB;">CR</div>
                             <div class="author-info">
                                 <h5>Carlos R.</h5>
-                                <p>Lima, Perú</p>
+                                <p>Lima, Perú · Versión Escritorio</p>
                             </div>
                         </div>
                     </div>
@@ -343,13 +426,13 @@
                             <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
                         <p class="testimonial-text">
-                            "Mi hijo pasaba metido en el PlayStation hasta tarde y no hacía las tareas por estar en línea con sus amigos. Enciendo el Silence Portátil y su mando se desconecta sin que sepa por qué. Santo remedio."
+                            "Mi hijo pasaba metido en el PlayStation hasta tarde y no hacía las tareas. Enciendo el Silence Portátil y su mando se desconecta sin que sepa por qué. ¡Santo remedio!"
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">AM</div>
+                            <div class="author-avatar" style="background:#7C3AED;">AM</div>
                             <div class="author-info">
                                 <h5>Ana M.</h5>
-                                <p>Arequipa, Perú</p>
+                                <p>Arequipa, Perú · Versión Portátil Avanzado</p>
                             </div>
                         </div>
                     </div>
@@ -364,17 +447,144 @@
                             <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
                         <p class="testimonial-text">
-                            "El pedido me llegó a Trujillo en dos días. La verdad dudaba si iba a funcionar, pero el dispositivo es sumamente efectivo, tengo mas tranquilidad en mi departamento"
+                            "El pedido me llegó a Trujillo en dos días. Dudaba si iba a funcionar, pero el dispositivo es sumamente efectivo. Tengo más tranquilidad en mi departamento."
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">JL</div>
+                            <div class="author-avatar" style="background:#059669;">JL</div>
                             <div class="author-info">
                                 <h5>Jorge L.</h5>
-                                <p>Trujillo, Perú</p>
+                                <p>Trujillo, Perú · Versión Portátil Pro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="glass-card testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Tengo una tetería y el local del costado ponía reggaetón fuertísimo. Compré el Pro Avanzado y ahora mis clientes disfrutan su té en total calma. ¡Ventas al alza!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:#D97706;">LV</div>
+                            <div class="author-info">
+                                <h5>Lucía V.</h5>
+                                <p>Miraflores, Lima · Versión Portátil Pro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="glass-card testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Lo compré sin tener muchas expectativas y quedé impresionado. Mi WiFi y mis dispositivos funcionan normal, solo afecta al parlante del vecino. 100% recomendado."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:#DC2626;">RP</div>
+                            <div class="author-info">
+                                <h5>Ricardo P.</h5>
+                                <p>San Isidro, Lima · Versión Escritorio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="glass-card testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Muy buen producto. Me costó un poco encontrar el ángulo correcto, pero el soporte de InfinityLab me ayudó por WhatsApp de inmediato. Funciona perfecto. ¡Lo recomiendo!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:#0891B2;">MF</div>
+                            <div class="author-info">
+                                <h5>Martina F.</h5>
+                                <p>Surco, Lima · Versión Portátil Avanzado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="glass-card testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Vivía en un edificio donde el de al costado tenía el parlante a todo volumen de noche. Ahora duermo tranquilo. El Pro Avanzado atraviesa la pared sin problema. Vale cada sol."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:#16A34A;">EG</div>
+                            <div class="author-info">
+                                <h5>Eduardo G.</h5>
+                                <p>Lince, Lima · Versión Portátil Pro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div class="glass-card testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Compré el de escritorio para mis dos hijos que se quedan jugando hasta las 2am. Ahora a las 10pm apago el Silence y listo, se duermen tranquilos. Muy recomendado para padres."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:#B45309;">PT</div>
+                            <div class="author-info">
+                                <h5>Patricia T.</h5>
+                                <p>Surquillo, Lima · Versión Escritorio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 9 -->
+                    <div class="glass-card testimonial-card">
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excelente producto. Me lo enviaron a Piura en 3 días y llegó perfectamente embalado. El Portátil Avanzado llega incluso a la terraza del vecino que está a 12 metros. ¡Chapeau!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background:#4F46E5;">HC</div>
+                            <div class="author-info">
+                                <h5>Héctor C.</h5>
+                                <p>Piura, Perú · Versión Portátil Avanzado</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <p class="scroll-hint">← Desliza para ver más reseñas →</p>
             </div>
         </section>
 
